@@ -1,0 +1,4 @@
+.rounded{
+    -fx-background-radius:10;
+    -fx-margin: 5px;
+}
