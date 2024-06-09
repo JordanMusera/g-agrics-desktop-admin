@@ -1,6 +1,7 @@
 package org.example.gagrics_admin_app;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,9 +34,6 @@ public class loginController {
         String password = passwordInput.getText();
         
         callApi(email,password);
-
-        Stage stage = (Stage) loginBtn.getScene().getWindow();
-        AppSwitcher.switchToApplication(mainActivity.class, stage);
     }
 
     private void callApi(String email, String password) {
@@ -46,7 +44,7 @@ public class loginController {
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody body = RequestBody.create(data.toString(),JSON);
         Request request = new Request.Builder()
-                .url("http://localhost:3002/users")
+                .url("https://agriculture-server.onrender.com/api/v2/user/login-user")
                 .post(body)
                 .header("Content-Type","application/json")
                 .build();
@@ -63,6 +61,21 @@ public class loginController {
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 String responseBody = response.body().string();
                 System.out.println(responseBody);
+
+                JSONObject jsonObject = new JSONObject(responseBody);
+                boolean success = jsonObject.getBoolean("success");
+
+                if (success){
+                Platform.runLater(()->{
+                    try {
+                        Stage stage = (Stage) loginBtn.getScene().getWindow();
+                        AppSwitcher.switchToApplication(mainActivity.class, stage);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                });
+                }
+
             }
         });
     }

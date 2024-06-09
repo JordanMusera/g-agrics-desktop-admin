@@ -1,44 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="400.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gagrics_admin_app.mainActivityController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="525.0" prefWidth="881.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gagrics_admin_app.mainActivityController">
    <left>
       <AnchorPane prefHeight="396.0" prefWidth="74.0" style="-fx-background-color: #05c649;" styleClass="rounded" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </BorderPane.margin>
          <children>
-            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="19.0" layoutY="27.0" pickOnBounds="true">
+            <ImageView fx:id="dashboardIcon" fitHeight="25.0" fitWidth="27.0" layoutX="18.0" layoutY="25.0" onMouseClicked="#onDashboardClikedBtn" pickOnBounds="true">
                <image>
                   <Image url="@../../../res/4171945_admin_dashboard_theme_administrator_compact_icon.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="36.0" layoutX="14.0" layoutY="79.0" pickOnBounds="true">
+            <ImageView fx:id="ordersIcon" fitHeight="33.0" fitWidth="36.0" layoutX="13.0" layoutY="77.0" pickOnBounds="true">
                <image>
                   <Image url="@../../../res/orders_icon.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="39.0" fitWidth="52.0" layoutX="5.0" layoutY="134.0" pickOnBounds="true">
+            <ImageView fx:id="productsIcon" fitHeight="39.0" fitWidth="52.0" layoutX="7.0" layoutY="132.0" pickOnBounds="true">
                <image>
                   <Image url="@../../../res/cart_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="sellersIcon" fitHeight="28.0" fitWidth="30.0" layoutX="18.0" layoutY="200.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../res/shop_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="usersIcon" fitHeight="33.0" fitWidth="36.0" layoutX="15.0" layoutY="254.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../res/users_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="eventsIcon" fitHeight="33.0" fitWidth="36.0" layoutX="15.0" layoutY="318.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../res/events_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="withdrawIcon" fitHeight="33.0" fitWidth="36.0" layoutX="15.0" layoutY="378.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../res/withdraw_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="settingsIcon" fitHeight="36.0" fitWidth="36.0" layoutX="15.0" layoutY="441.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../res/settings_icon.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="400.0" prefWidth="483.0" style="-fx-background-color: gray;" styleClass="rounded" stylesheets="@style.css" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="centerAnchorPane" prefHeight="400.0" prefWidth="483.0" style="-fx-background-color: #121212;" styleClass="rounded" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="2.0" right="2.0" top="2.0" />
-         </BorderPane.margin></AnchorPane>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin>
+         <children>
+            <Label fx:id="dashboardHoverTitle" layoutX="-22.0" layoutY="28.0" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #666666;" styleClass="button_rounded" stylesheets="@style.css" text="Dashboard" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="ordersHoverTitle" layoutX="-22.0" layoutY="85.0" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #666666;" styleClass="button_rounded" stylesheets="@style.css" text="All Orders" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="productsHoverTitle" layoutX="-22.0" layoutY="142.0" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #666666;" styleClass="button_rounded" stylesheets="@style.css" text="All Products" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="sellersHoverTitle" layoutX="-22.0" layoutY="203.0" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #666666;" styleClass="button_rounded" stylesheets="@style.css" text="All Sellers" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="usersHoverTitle" layoutX="-22.0" layoutY="261.0" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #666666;" styleClass="button_rounded" stylesheets="@style.css" text="All Users" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="eventsHoverTitle" layoutX="-22.0" layoutY="324.0" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #666666;" styleClass="button_rounded" stylesheets="@style.css" text="All Events" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="withdrawHoverTitle" layoutX="-22.0" layoutY="383.0" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #666666;" styleClass="button_rounded" stylesheets="@style.css" text="Widthdraw" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="settingsHoverTitle" layoutX="-22.0" layoutY="449.0" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #666666;" styleClass="button_rounded" stylesheets="@style.css" text="Settings" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
+         </children></AnchorPane>
    </center>
    <right>
-      <AnchorPane prefHeight="396.0" prefWidth="192.0" style="-fx-background-color: yellow;" styleClass="rounded" stylesheets="@style.css" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="396.0" prefWidth="192.0" style="-fx-background-color: #181818;" styleClass="rounded" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </BorderPane.margin>
